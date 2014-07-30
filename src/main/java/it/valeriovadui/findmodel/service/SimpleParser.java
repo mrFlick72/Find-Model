@@ -62,14 +62,12 @@ public final class SimpleParser extends AbstractParser {
 
                             // change state
                             currentState = Q1;
-                        }
-                        else if(!aux.contains("(") && formula.length() == 1){
+                        } else if(!aux.contains("(") && formula.length() == 1){
 
                             result = new ElementaryFormula(aux.replace("!", ""), negation);
 
                             currentState = Q6;
-                        }
-                        else{
+                        } else{
                             isError = true;
                             currentState = Q7;
                         }
@@ -104,9 +102,7 @@ public final class SimpleParser extends AbstractParser {
                             if(debug)
                                 StampaPila(pila);
 
-                        }
-                        else if(!aux.contains("(") && pila.get(0) == F){
-
+                        } else if(!aux.contains("(") && pila.get(0) == F){
                             // I am in the 2 state of the automaton
                             // I put data on the stack
                             pila.removeFirst();
@@ -119,10 +115,8 @@ public final class SimpleParser extends AbstractParser {
                             if(debug)
                                 StampaPila(pila);
 
-
                             currentState = Q2;
-                        }
-                        else{
+                        } else{
                             isError = true;
                             currentState = Q7;
                         }
@@ -165,13 +159,10 @@ public final class SimpleParser extends AbstractParser {
 
                             currentState = Q3;
 
-                        }
-                        else{
+                        }else{
                             isError = true;
                             currentState = Q7;
                         }
-
-
                         break;
 
                     case Q3:
@@ -199,8 +190,7 @@ public final class SimpleParser extends AbstractParser {
                             currentState = Q4;
 
 
-                        }
-                        else if(aux.contains("(") && pila.get(0) == F){
+                        } else if(aux.contains("(") && pila.get(0) == F){
                             // I am in the 1 state of the automaton
                             // I put data on the stack
 
@@ -220,10 +210,7 @@ public final class SimpleParser extends AbstractParser {
                                 StampaPila(pila);
 
                             currentState = Q1;
-
-
-                        }
-                        else{
+                        } else{
                             isError = true;
                             currentState = Q7;
                         }
@@ -263,8 +250,7 @@ public final class SimpleParser extends AbstractParser {
 
                             currentState = Q5;
 
-                        }
-                        else if(aux.contains(")") && pila.get(0) == E && pila.get(1) == Z0){
+                        } else if(aux.contains(")") && pila.get(0) == E && pila.get(1) == Z0){
                         /* IMPORTANTE questo stato porta ad uno stato finale */
                             pila.removeFirst();
 
@@ -299,8 +285,7 @@ public final class SimpleParser extends AbstractParser {
                                 logger.info("Riconoscimento Completato");
                             }
 
-                        }
-                        else{
+                        } else{
                             isError = true;
                             currentState = Q7;
                         }
@@ -343,8 +328,6 @@ public final class SimpleParser extends AbstractParser {
                             currentState = Q3;
 
                         } else if(aux.contains(")") && pila.get(0) == E){
-
-
                             pila.removeFirst();
 
                             index = queue.size() -3;
@@ -367,7 +350,7 @@ public final class SimpleParser extends AbstractParser {
 
                             currentState = Q5;
 
-                        }else if(aux.contains(")") && pila.get(0) == E && pila.get(1) == Z0){
+                        } else if(aux.contains(")") && pila.get(0) == E && pila.get(1) == Z0){
 
                             pila.removeFirst();
 
@@ -396,8 +379,7 @@ public final class SimpleParser extends AbstractParser {
                                 logger.info("Mi trovo nello stato finale dell'automa");
                                 logger.info("Riconoscimento Completato");
                             }
-                        }
-                        else{
+                        } else{
                             isError = true;
                             currentState = Q7;
                         }
@@ -410,10 +392,8 @@ public final class SimpleParser extends AbstractParser {
                         logger.info("Riconoscimento Completato");
                         break;
                 }
-
                 negation =  false;
             }
-
         }
         return result;
     }
