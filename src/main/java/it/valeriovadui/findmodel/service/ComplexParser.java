@@ -17,12 +17,10 @@ public final class ComplexParser extends AbstractParser {
     public Formula parse(){
         int count  = 0;
         Formula result = null;
-        Formula  currentFormula = null;
-        Expression auxExp = null;
-        ElementaryFormula auxEl = null;
+        Formula  currentFormula;
+        Expression auxExp;
 
-        boolean init = false;
-        int index = 0;
+        int index;
 
         if(formula != null && !formula.equals("")){
 
@@ -541,7 +539,6 @@ public final class ComplexParser extends AbstractParser {
                                 auxExp.setFormulaTwo(queue.get(index +2));
 
                                 // elimino le formule settate elementari assegnate
-
                                 queue.removeLast();
                                 queue.removeLast();
 

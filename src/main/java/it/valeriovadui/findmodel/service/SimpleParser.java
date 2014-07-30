@@ -23,7 +23,7 @@ public final class SimpleParser extends AbstractParser {
         Expression auxExp;
 
         boolean isError = false;
-        int index = 0;
+        int index;
 
         if(formula != null && !formula.equals("")){
 
@@ -68,7 +68,6 @@ public final class SimpleParser extends AbstractParser {
                             result = new ElementaryFormula(aux.replace("!", ""), negation);
 
                             currentState = Q6;
-
                         }
                         else{
                             isError = true;
@@ -84,11 +83,11 @@ public final class SimpleParser extends AbstractParser {
                         count++;
                         logger.info("Step Number: " + count);
 
-                        logger.info("mi trovo nello stato 1 del'automa");
+                        logger.info("I am in the 1 state of the automaton");
 
                         if(aux.contains("(") && pila.get(0) == F){
 
-                            // mi trovo nello stato 1 del'automa
+                            // I am in the 1 state of the automaton
                             // I put data on the stack
                             pila.removeFirst();
                             pila.add(0,E);
@@ -97,7 +96,6 @@ public final class SimpleParser extends AbstractParser {
                             pila.add(0,F);
 
                             // setto l'espressione correntemente puntata e la metto in coda
-
                             currentFormula = new Expression(negation);
 
                             // I put in the queue currentFormula
@@ -109,7 +107,7 @@ public final class SimpleParser extends AbstractParser {
                         }
                         else if(!aux.contains("(") && pila.get(0) == F){
 
-                            // mi trovo nello stato 2 del'automa
+                            // I am in the 2 state of the automaton
                             // I put data on the stack
                             pila.removeFirst();
 
@@ -135,13 +133,13 @@ public final class SimpleParser extends AbstractParser {
                         count++;
                         logger.info("Step Number: " + count);
 
-                        logger.info("mi trovo nello stato 2 del'automa");
+                        logger.info("I am in the 2 state of the automaton");
 
                         if((aux.contains(Expression.OR_STRING) ||
                                 aux.contains(Expression.AND_STRING) ||
                                 aux.contains(Expression.IMPLICATION_STRING))
                                 && pila.get(0) == OP){
-                            // mi trovo nello stato 3 del'automa
+                            // I am in the 3 state of the automaton
                             // I put data on the stack
 
                             pila.removeFirst();
@@ -181,10 +179,10 @@ public final class SimpleParser extends AbstractParser {
                         count++;
                         logger.info("Step Number: " + count);
 
-                        logger.info("mi trovo nello stato 3 del'automa");
+                        logger.info("I am in the 3 state of the automaton");
 
                         if(!aux.contains("(") && pila.get(0) == F){
-                            // mi trovo nello stato 4 del'automa
+                            // I am in the 4 state of the automaton
                             // I put data on the stack
 
 
@@ -203,7 +201,7 @@ public final class SimpleParser extends AbstractParser {
 
                         }
                         else if(aux.contains("(") && pila.get(0) == F){
-                            // mi trovo nello stato 1 del'automa
+                            // I am in the 1 state of the automaton
                             // I put data on the stack
 
                             pila.removeFirst();
@@ -235,24 +233,24 @@ public final class SimpleParser extends AbstractParser {
                         count++;
                         logger.info("Step Number: "+ count);
 
-                        logger.info("mi trovo nello stato 4 del'automa");
+                        logger.info("I am in the 4 state of the automaton");
 
                         if(aux.contains(")") && pila.get(0) == E){
-                            // mi trovo nello stato 5 del'automa
+                            // I am in the 5 state of the automaton
                             // I put data on the stack
                             logger.info("transizione dello stato 4 del'automa per andare allo stato 5");
 
                             pila.removeFirst(); // rimuovo il primo elemento a fiorante
 
-                            // mi trovo il root
+                            // i find the root
                             index = queue.size() -3;
 
-                            // ottengo l0espressione root
+                            // i extract the root expression
                             currentFormula = queue.get(index);
 
                             auxExp = (Expression) currentFormula;
 
-                            // setto le formule
+                            // i set the formulas
                             auxExp.setFormulaOne(queue.get(index +1));
                             auxExp.setFormulaTwo(queue.get(index +2));
 
@@ -275,22 +273,21 @@ public final class SimpleParser extends AbstractParser {
 
                             currentState = Q6;
 
-                            // mi trovo il root
+                            // i find the root
                             index = queue.size() -3;
 
-                            // ottengo l0espressione root
+                            // i extract the root expression
                             currentFormula = queue.get(index);
 
                             auxExp = (Expression) currentFormula;
 
                             logger.info("Step Number: " + queue.size());
-                            // setto le formule
 
+                            // i set the formulas
                             auxExp.setFormulaOne(queue.get(index +1));
                             auxExp.setFormulaTwo(queue.get(index +2));
 
                             // elimino le formule settate elementari assegnate
-
                             queue.removeLast();
                             queue.removeLast();
 
@@ -313,16 +310,16 @@ public final class SimpleParser extends AbstractParser {
                         count++;
                         logger.info("Step Number: "+ count);
 
-                        logger.info("mi trovo nello stato 5 del'automa");
+                        logger.info("I am in the 5 state of the automaton");
 
                         if((aux.contains(Expression.OR_STRING) ||
                                 aux.contains(Expression.AND_STRING) ||
                                 aux.contains(Expression.IMPLICATION_STRING))
                                 && pila.get(0) == OP){
-                            // mi trovo nello stato 5 del'automa
+                            // I am in the 5 state of the automaton
                             // I put data on the stack
 
-                            logger.info("mi trovo nello stato 3 del'automa");
+                            logger.info("I am in the 3 state of the automaton");
 
                             pila.removeFirst(); // rimuovo il primo elemento a fiorante
 
@@ -352,17 +349,16 @@ public final class SimpleParser extends AbstractParser {
 
                             index = queue.size() -3;
 
-                            // ottengo l0espressione root
+                            // i find the root
                             currentFormula = queue.get(index);
 
                             auxExp = (Expression) currentFormula;
 
-                            // setto le formule
+                            // i set the formulas
                             auxExp.setFormulaOne(queue.get(index +1));
                             auxExp.setFormulaTwo(queue.get(index +2));
 
                             // elimino le formule settate elementari assegnate
-
                             queue.removeLast();
                             queue.removeLast();
 
@@ -377,17 +373,16 @@ public final class SimpleParser extends AbstractParser {
 
                             index = queue.size() -3;
 
-                            // ottengo l0espressione root
+                            // i find the root
                             currentFormula = queue.get(index);
 
                             auxExp = (Expression) currentFormula;
 
-                            // setto le formule
+                            // i set the formulas
                             auxExp.setFormulaOne(queue.get(index +1));
                             auxExp.setFormulaTwo(queue.get(index +2));
 
                             // elimino le formule settate elementari assegnate
-
                             queue.removeLast();
                             queue.removeLast();
 
