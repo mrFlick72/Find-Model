@@ -89,7 +89,7 @@ public final class SimpleParser extends AbstractParser {
                         if(aux.contains("(") && pila.get(0) == F){
 
                             // mi trovo nello stato 1 del'automa
-                            // aggiungo i dati in pila
+                            // I put data on the stack
                             pila.removeFirst();
                             pila.add(0,E);
                             pila.add(0,F);
@@ -110,7 +110,7 @@ public final class SimpleParser extends AbstractParser {
                         else if(!aux.contains("(") && pila.get(0) == F){
 
                             // mi trovo nello stato 2 del'automa
-                            // aggiungo i dati in pila
+                            // I put data on the stack
                             pila.removeFirst();
 
                             currentFormula = new ElementaryFormula(aux.replace("!", ""),negation);
@@ -142,7 +142,7 @@ public final class SimpleParser extends AbstractParser {
                                 aux.contains(Expression.IMPLICATION_STRING))
                                 && pila.get(0) == OP){
                             // mi trovo nello stato 3 del'automa
-                            // aggiungo i dati in pila
+                            // I put data on the stack
 
                             pila.removeFirst();
 
@@ -185,7 +185,7 @@ public final class SimpleParser extends AbstractParser {
 
                         if(!aux.contains("(") && pila.get(0) == F){
                             // mi trovo nello stato 4 del'automa
-                            // aggiungo i dati in pila
+                            // I put data on the stack
 
 
                             pila.removeFirst();
@@ -204,7 +204,7 @@ public final class SimpleParser extends AbstractParser {
                         }
                         else if(aux.contains("(") && pila.get(0) == F){
                             // mi trovo nello stato 1 del'automa
-                            // aggiungo i dati in pila
+                            // I put data on the stack
 
                             pila.removeFirst();
 
@@ -239,7 +239,7 @@ public final class SimpleParser extends AbstractParser {
 
                         if(aux.contains(")") && pila.get(0) == E){
                             // mi trovo nello stato 5 del'automa
-                            // aggiungo i dati in pila
+                            // I put data on the stack
                             logger.info("transizione dello stato 4 del'automa per andare allo stato 5");
 
                             pila.removeFirst(); // rimuovo il primo elemento a fiorante
@@ -320,7 +320,7 @@ public final class SimpleParser extends AbstractParser {
                                 aux.contains(Expression.IMPLICATION_STRING))
                                 && pila.get(0) == OP){
                             // mi trovo nello stato 5 del'automa
-                            // aggiungo i dati in pila
+                            // I put data on the stack
 
                             logger.info("mi trovo nello stato 3 del'automa");
 
