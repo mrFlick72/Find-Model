@@ -7,14 +7,13 @@ import it.valeriovadui.findmodel.model.Formula;
 import java.util.StringTokenizer;
 
 /**
- * Created by Valerio on 29/07/2014.
+ * @author mrFlick72
  */
 public final class ComplexParser extends AbstractParser {
     public ComplexParser(String formula) {
         super(formula);
     }
 
-    // implementazione dell'automa a pila complicato
     public Formula parse(){
         int count  = 0;
         Formula result = null;

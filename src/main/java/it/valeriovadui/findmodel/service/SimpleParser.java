@@ -7,7 +7,7 @@ import it.valeriovadui.findmodel.model.Formula;
 import java.util.StringTokenizer;
 
 /**
- * Created by Valerio on 29/07/2014.
+ * @author mrFlick72
  */
 public final class SimpleParser extends AbstractParser {
     public SimpleParser(String formula) {
@@ -15,7 +15,7 @@ public final class SimpleParser extends AbstractParser {
     }
 
     @Override
-    // implementation of a simple pushdown automaton
+    // implementation of a simple stack automaton
     public Formula parse(){
         int count  = 0;
         Formula result = null;
@@ -60,7 +60,7 @@ public final class SimpleParser extends AbstractParser {
                             currentFormula = result;
                             queue.add(currentFormula);
 
-                            // mi muovo nello stato corretto
+                            // change state
                             currentState = Q1;
                         }
                         else if(!aux.contains("(") && formula.length() == 1){
@@ -100,7 +100,7 @@ public final class SimpleParser extends AbstractParser {
 
                             currentFormula = new Expression(negation);
 
-                            // currentFormula la metto in coda
+                            // I put in the queue currentFormula
                             queue.add(currentFormula);
 
                             if(debug)
@@ -115,8 +115,7 @@ public final class SimpleParser extends AbstractParser {
 
                             currentFormula = new ElementaryFormula(aux.replace("!", ""),negation);
 
-                            // currentFormula lametto in coda
-
+                            // I put in the queue currentFormula
                             queue.add(currentFormula);
 
                             if(debug)
@@ -134,7 +133,7 @@ public final class SimpleParser extends AbstractParser {
                     case Q2:
                          /* STATO IN CUI SETTO L'OPERATORE */
                         count++;
-                        logger.info("Passo numero " + count);
+                        logger.info("Step Number: " + count);
 
                         logger.info("mi trovo nello stato 2 del'automa");
 
@@ -180,7 +179,7 @@ public final class SimpleParser extends AbstractParser {
                     case Q3:
                          /* TROVO UNA VARIABILE E L'INSERISCO IN CODA */
                         count++;
-                        logger.info("Passo numero " + count);
+                        logger.info("Step Number: " + count);
 
                         logger.info("mi trovo nello stato 3 del'automa");
 
@@ -234,7 +233,7 @@ public final class SimpleParser extends AbstractParser {
 
                     case Q4:
                         count++;
-                        logger.info("Passo numero " + count);
+                        logger.info("Step Number: "+ count);
 
                         logger.info("mi trovo nello stato 4 del'automa");
 
@@ -284,7 +283,7 @@ public final class SimpleParser extends AbstractParser {
 
                             auxExp = (Expression) currentFormula;
 
-                            logger.info("Passo numero " + queue.size());
+                            logger.info("Step Number: " + queue.size());
                             // setto le formule
 
                             auxExp.setFormulaOne(queue.get(index +1));
@@ -298,7 +297,7 @@ public final class SimpleParser extends AbstractParser {
                             result = queue.getFirst();
 
                             if(currentState == Q6){
-                                logger.info("Passo numero " + count);
+                                logger.info("Step Number: "+ count);
                                 logger.info("Mi trovo nello stato finale dell'automa");
                                 logger.info("Riconoscimento Completato");
                             }
@@ -312,7 +311,7 @@ public final class SimpleParser extends AbstractParser {
 
                     case Q5:
                         count++;
-                        logger.info("Passo numero " + count);
+                        logger.info("Step Number: "+ count);
 
                         logger.info("mi trovo nello stato 5 del'automa");
 
@@ -398,7 +397,7 @@ public final class SimpleParser extends AbstractParser {
                             currentState = Q6;
 
                             if(currentState == Q6){
-                                logger.info("Passo numero " + count);
+                                logger.info("Step Number: " + count);
                                 logger.info("Mi trovo nello stato finale dell'automa");
                                 logger.info("Riconoscimento Completato");
                             }
@@ -411,7 +410,7 @@ public final class SimpleParser extends AbstractParser {
 
                     case Q6:
                         count++;
-                        logger.info("Passo numero " + count);
+                        logger.info("Step Number: " + count);
                         logger.info("Mi trovo nello stato finale dell'automa");
                         logger.info("Riconoscimento Completato");
                         break;

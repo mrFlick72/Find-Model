@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  *
- * @author Valerio
+ * @author mrFlick72
  */
 public abstract class Formula {
     

@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 /**
- * Created by Valerio on 29/07/2014.
+ * @author mrFlick72
  */
 public abstract class AbstractParser implements Parser{
     protected static Logger logger = Logger.getLogger(AbstractParser.class);
@@ -58,7 +58,7 @@ public abstract class AbstractParser implements Parser{
 
         Iterator<Integer> iteratore = l.iterator();
         int aux;
-        logger.info("Valore corrente della pila");
+        logger.info("Current value of the stack");
 
         while(iteratore.hasNext()){
             aux = iteratore.next();

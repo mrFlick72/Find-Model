@@ -6,7 +6,7 @@ package it.valeriovadui.findmodel.model;
 
 /**
  *
- * @author Valerio
+ * @author mrFlick72
  */
 public class Expression extends Formula{
     /* an expretion can be:

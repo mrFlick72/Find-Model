@@ -5,7 +5,7 @@ import it.valeriovadui.findmodel.service.Parser;
 import it.valeriovadui.findmodel.service.SimpleParser;
 
 /**
- * Created by Valerio on 29/07/2014.
+ * @author mrFlick72
  */
 public class ParserFactory {
     public static Parser getSimParserParser(String formula){return new SimpleParser(formula);}

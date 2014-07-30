@@ -13,16 +13,12 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Valerio
+ * @author mrFlick72
  */
 public class ModelTable extends JTable{
-    
     private List<HashMap<String,Boolean>> interpretations;
     private String[] variables;
-    public ModelTable(){
-          super();
-        
-    }
+
     public ModelTable(List<HashMap<String,Boolean>> interpretations,String[] variables){
         super();
         
@@ -34,7 +30,7 @@ public class ModelTable extends JTable{
     private Object[][] InitTable(){
         Object[][] result = new Object[interpretations.size()][variables.length];
         int i = 0;
-        // mi occupo del resto della tabella
+
         Iterator<HashMap<String,Boolean>> iteratore = interpretations.iterator();
         Map<String,Boolean> auxMap;
         String auxVariable;
@@ -43,7 +39,7 @@ public class ModelTable extends JTable{
         while(iteratore.hasNext()){
             auxMap = iteratore.next();
             
-            // per ogni variabile trovo il suop valore booleano e lo inserisco in tabella
+            // for all the variables to find its Boolean value and insert it in the table
             for (int j = 0 ; j < variables.length ; j++){
                 if(auxMap.get(variables[j])){
                     auxVariable = "TRUE";

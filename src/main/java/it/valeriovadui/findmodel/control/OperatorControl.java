@@ -11,7 +11,7 @@ import it.valeriovadui.findmodel.model.Formula;
 
 /**
  *
- * @author Valerio
+ * @author mrFlick72
  */
 
 public class OperatorControl {
