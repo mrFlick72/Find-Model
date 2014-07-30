@@ -12,15 +12,12 @@ package it.valeriovadui.findmodel.view;
 
 import it.valeriovadui.findmodel.control.OperatorControl;
 import it.valeriovadui.findmodel.factory.ParserFactory;
-import it.valeriovadui.findmodel.service.Parser;
-import java.awt.Dimension;
-import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-
 import it.valeriovadui.findmodel.model.Expression;
 import it.valeriovadui.findmodel.model.Formula;
+import it.valeriovadui.findmodel.service.Parser;
+
+import javax.swing.*;
+import java.awt.*;
 
 /**
  *
@@ -205,7 +202,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private void jButtonAndMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAndMousePressed
         // TODO add your handling code here:
          int position = jTextFieldSorgente.getCaretPosition();
-         System.out.println(position);
          String aux = jTextFieldSorgente.getText();
          
          if(position < aux.length()){
@@ -220,7 +216,6 @@ public class MainJFrame extends javax.swing.JFrame {
     private void jButtonOrMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOrMousePressed
         // TODO add your handling code here:
          int position = jTextFieldSorgente.getCaretPosition();
-         System.out.println(position);
          String aux = jTextFieldSorgente.getText();
          
          if(position < aux.length()){
@@ -236,7 +231,6 @@ public class MainJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
          int position = jTextFieldSorgente.getCaretPosition();
-         System.out.println(position);
          String aux = jTextFieldSorgente.getText();
          
          if(position < aux.length()){

@@ -1,13 +1,10 @@
 package it.valeriovadui.findmodel.service;
 
-import it.valeriovadui.findmodel.model.ElementaryFormula;
-import it.valeriovadui.findmodel.model.Expression;
 import it.valeriovadui.findmodel.model.Formula;
 import org.apache.log4j.Logger;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-import java.util.StringTokenizer;
 
 /**
  * @author mrFlick72

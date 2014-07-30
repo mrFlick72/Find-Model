@@ -4,10 +4,11 @@
  */
 package it.valeriovadui.findmodel.control;
 
-import java.util.*;
 import it.valeriovadui.findmodel.model.ElementaryFormula;
 import it.valeriovadui.findmodel.model.Expression;
 import it.valeriovadui.findmodel.model.Formula;
+
+import java.util.*;
 
 /**
  *
@@ -15,11 +16,9 @@ import it.valeriovadui.findmodel.model.Formula;
  */
 
 public class OperatorControl {
-    public static final boolean debug = true;
- 
     private OperatorControl(){}
     
-    public static List<HashMap<String,Boolean> > createAssignation(String[] variables){
+    public static List<HashMap<String,Boolean>> createAssignation(String[] variables){
         HashMap<String,Boolean>  aux;
         List<HashMap<String,Boolean> > result = new ArrayList<HashMap<String,Boolean> >();
         
@@ -30,7 +29,7 @@ public class OperatorControl {
         
         // compilo le interpretazioni
         for(i = 0; i < assegnition.length ; i++){
-            aux = new HashMap<String,Boolean>();
+            aux = new HashMap<>();
                // assegno tutti i valori possibili alle variabili
             for(j = 0; j < assegnition[0].length ; j++){
                  // se non edvo cambiare il valoere metto il deafault e quindi true
@@ -87,7 +86,7 @@ public class OperatorControl {
         return assegnition;
     }
     
-    public static boolean execute(Formula f, HashMap<String,Boolean>  interpretation){
+    public static boolean execute(Formula f, Map<String,Boolean>  interpretation){
         boolean result = false;
 
         if(f!= null){
@@ -144,11 +143,9 @@ public class OperatorControl {
         return  result;
     }
 
-    public static List<HashMap<String,Boolean>> checkModel(Formula f, String[] variables){
-        List<HashMap<String,Boolean>>  result = new ArrayList<HashMap<String,Boolean>>();
-        
-        int count = 0;
-        
+    public static List<Map<String,Boolean>> checkModel(Formula f, String[] variables){
+        List<Map<String,Boolean>>  result = new ArrayList<>();
+
         List<HashMap<String,Boolean> > interpretations = createAssignation(variables);
         HashMap<String,Boolean>  interpretation;
         Iterator<HashMap<String,Boolean> > iterator = interpretations.iterator();
@@ -157,8 +154,7 @@ public class OperatorControl {
             interpretation = iterator.next();
             
             if(execute(f, interpretation)){
-               count++;
-               result.add(interpretation);
+                result.add(interpretation);
 
             }
         }
@@ -167,11 +163,11 @@ public class OperatorControl {
 
     public static String printCheckModel(Formula f, String[] variables){
     
-    List<HashMap<String,Boolean>>  aux = checkModel(f, variables);   
+    List<Map<String,Boolean>>  aux = checkModel(f, variables);
     String result = "";
     
-        HashMap<String,Boolean>  interpretation;
-        Iterator<HashMap<String,Boolean> > iterator = aux.iterator();
+        Map<String,Boolean>  interpretation;
+        Iterator<Map<String,Boolean> > iterator = aux.iterator();
        
         while(iterator.hasNext()){
             interpretation = iterator.next();

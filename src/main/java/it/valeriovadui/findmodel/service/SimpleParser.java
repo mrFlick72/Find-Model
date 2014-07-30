@@ -29,9 +29,7 @@ public final class SimpleParser extends AbstractParser {
 
             StringTokenizer stringToken = new StringTokenizer(formula);
             String aux;
-
             boolean negation = false;
-
 
             while(stringToken.hasMoreTokens() && !isError){
 
@@ -135,7 +133,6 @@ public final class SimpleParser extends AbstractParser {
                                 && pila.get(0) == OP){
                             // I am in the 3 state of the automaton
                             // I put data on the stack
-
                             pila.removeFirst();
 
                             index = queue.size() -2;

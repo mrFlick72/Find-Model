@@ -4,22 +4,21 @@
  */
 package it.valeriovadui.findmodel.view;
 
-import java.util.HashMap;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author mrFlick72
  */
 public class ModelTable extends JTable{
-    private List<HashMap<String,Boolean>> interpretations;
+    private List<Map<String,Boolean>> interpretations;
     private String[] variables;
 
-    public ModelTable(List<HashMap<String,Boolean>> interpretations,String[] variables){
+    public ModelTable(List<Map<String,Boolean>> interpretations,String[] variables){
         super();
         
         this.interpretations= interpretations;
@@ -31,7 +30,7 @@ public class ModelTable extends JTable{
         Object[][] result = new Object[interpretations.size()][variables.length];
         int i = 0;
 
-        Iterator<HashMap<String,Boolean>> iteratore = interpretations.iterator();
+        Iterator<Map<String,Boolean>> iteratore = interpretations.iterator();
         Map<String,Boolean> auxMap;
         String auxVariable;
         
