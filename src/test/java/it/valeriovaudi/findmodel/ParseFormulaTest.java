@@ -35,7 +35,6 @@ public class ParseFormulaTest extends AbstractGenericTestConfiguration{
     * */
     @Test
     public void interpretationFormulaTest(){
-
         when(parser.parse()).thenReturn(getFormulaTest());
 
         Formula formula = parser.parse();
