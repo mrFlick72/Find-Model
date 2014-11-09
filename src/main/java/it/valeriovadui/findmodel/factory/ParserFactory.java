@@ -8,6 +8,16 @@ import it.valeriovadui.findmodel.service.SimpleParser;
  * @author mrFlick72
  */
 public class ParserFactory {
-    public static Parser getSimParserParser(String formula){return new SimpleParser(formula);}
-    public static Parser getCompelxParser(String formula){return new ComplexParser(formula);}
+
+    private ParserFactory(){
+
+    }
+
+    public static Parser getSimParserParser(String formula){
+        return new SimpleParser(formula);
+    }
+
+    public static Parser getCompelxParser(String formula){
+        return new ComplexParser(formula);
+    }
 }

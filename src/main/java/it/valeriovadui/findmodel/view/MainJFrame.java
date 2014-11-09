@@ -165,7 +165,6 @@ public class MainJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonEvalMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEvalMousePressed
-        // TODO add your handling code here:
         String source = jTextFieldSorgente.getText().trim();
         Parser parse = ParserFactory.getSimParserParser(source);
         formula = parse.parse();
@@ -200,7 +199,6 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEvalMousePressed
 
     private void jButtonAndMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAndMousePressed
-        // TODO add your handling code here:
          int position = jTextFieldSorgente.getCaretPosition();
          String aux = jTextFieldSorgente.getText();
          
@@ -214,7 +212,6 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonAndMousePressed
 
     private void jButtonOrMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOrMousePressed
-        // TODO add your handling code here:
          int position = jTextFieldSorgente.getCaretPosition();
          String aux = jTextFieldSorgente.getText();
          
@@ -228,7 +225,6 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonOrMousePressed
 
     private void jButton5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MousePressed
-        // TODO add your handling code here:
         
          int position = jTextFieldSorgente.getCaretPosition();
          String aux = jTextFieldSorgente.getText();
@@ -245,7 +241,6 @@ public class MainJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5MousePressed
 
     private void jTextFieldSorgenteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldSorgenteKeyReleased
-        // TODO add your handling code here:
         
          int position = jTextFieldSorgente.getCaretPosition();
          System.out.println(position);
@@ -277,7 +272,7 @@ public class MainJFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        // TODO code application logic here
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             private String currentLookAndFeel;

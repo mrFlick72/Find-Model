@@ -61,11 +61,10 @@ public abstract class Formula {
         
         if(f instanceof ElementaryFormula){
             ElementaryFormula ef = (ElementaryFormula) f;
-            if(!pull.contains(ef.getVariable()))
-                 pull.add(ef.getVariable());
-            
-        }
-        else{
+            if(!pull.contains(ef.getVariable())){
+                pull.add(ef.getVariable());
+            }
+        } else{
             Expression e = (Expression) f;
             
             findVariable(e.getFormulaOne(),pull);

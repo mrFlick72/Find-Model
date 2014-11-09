@@ -18,9 +18,9 @@ import java.util.*;
 public class OperatorControl {
     private OperatorControl(){}
     
-    public static List<HashMap<String,Boolean>> createAssignation(String[] variables){
-        HashMap<String,Boolean>  aux;
-        List<HashMap<String,Boolean> > result = new ArrayList<HashMap<String,Boolean> >();
+    public static List<Map<String,Boolean>> createAssignation(String[] variables){
+        Map<String,Boolean>  aux;
+        List<Map<String,Boolean> > result = new ArrayList<Map<String,Boolean> >();
         
         int i;
         int j;
@@ -34,7 +34,6 @@ public class OperatorControl {
             for(j = 0; j < assegnition[0].length ; j++){
                  // se non edvo cambiare il valoere metto il deafault e quindi true
                  aux.put(variables[j], assegnition[i][j]);
-                 
             }
              result.add(aux);
         }
@@ -65,11 +64,10 @@ public class OperatorControl {
                      assegnition[i][j] = true;
                      
                      trueAndFalse++;
-                     if(trueAndFalse == next)
+                     if(trueAndFalse == next){
                          changeValue =  true;
-                     
-                 }
-                 else{
+                     }
+                 } else{
                      // altrimenti metto i false
                      assegnition[i][j] = false;
                      
@@ -90,7 +88,6 @@ public class OperatorControl {
         boolean result = false;
 
         if(f!= null){
-            
             if(f instanceof Expression){
                 
                 Expression e = (Expression) f;
@@ -98,13 +95,11 @@ public class OperatorControl {
                 int operation = e.getOperatorType();
                 
             switch(operation){
-            
               case Expression.OR:
                   
                   if(e.isNegation()){
                       result = !(execute(e.getFormulaOne(),interpretation) || execute(e.getFormulaTwo(),interpretation));
-                  }
-                  else{
+                  } else{
                       result = execute(e.getFormulaOne(),interpretation) || execute(e.getFormulaTwo(),interpretation);
                   }
                   
@@ -112,8 +107,7 @@ public class OperatorControl {
               case Expression.AND:
                    if(e.isNegation()){
                       result = !(execute(e.getFormulaOne(),interpretation) && execute(e.getFormulaTwo(),interpretation));
-                  }
-                  else{
+                  } else{
                       result = execute(e.getFormulaOne(),interpretation) && execute(e.getFormulaTwo(),interpretation);
                   }
 
@@ -121,8 +115,7 @@ public class OperatorControl {
               case Expression.IMPLICATION:
                   if(e.isNegation()){
                       result = !(!execute(e.getFormulaOne(),interpretation) ||execute(e.getFormulaTwo(),interpretation));
-                  }
-                  else{
+                  } else{
                       result = !execute(e.getFormulaOne(),interpretation) ||execute(e.getFormulaTwo(),interpretation);
                   }
                 break;
@@ -146,9 +139,9 @@ public class OperatorControl {
     public static List<Map<String,Boolean>> checkModel(Formula f, String[] variables){
         List<Map<String,Boolean>>  result = new ArrayList<>();
 
-        List<HashMap<String,Boolean> > interpretations = createAssignation(variables);
-        HashMap<String,Boolean>  interpretation;
-        Iterator<HashMap<String,Boolean> > iterator = interpretations.iterator();
+        List<Map<String,Boolean> > interpretations = createAssignation(variables);
+        Map<String,Boolean>  interpretation;
+        Iterator<Map<String,Boolean> > iterator = interpretations.iterator();
         
         while(iterator.hasNext()){
             interpretation = iterator.next();

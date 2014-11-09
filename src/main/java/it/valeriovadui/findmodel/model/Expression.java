@@ -61,13 +61,14 @@ public class Expression extends Formula{
         
         int result = -1;
         
-        if(operator.equals(AND_STRING))
+        if(operator.equals(AND_STRING)){
             result = AND;
-        else if(operator.equals(OR_STRING))
+        } else if(operator.equals(OR_STRING)){
             result = OR;
-        else if(operator.equals(IMPLICATION_STRING))
+        } else if(operator.equals(IMPLICATION_STRING)){
             result = IMPLICATION;
-            
+        }
+
         return result;
         
     }

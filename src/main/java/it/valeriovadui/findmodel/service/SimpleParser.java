@@ -70,8 +70,8 @@ public final class SimpleParser extends AbstractParser {
                             currentState = Q7;
                         }
 
-                        if(debug)
-                            StampaPila(pila);
+                        if(DEBUG)
+                            stampaPila(pila);
 
                         break;
 
@@ -97,8 +97,8 @@ public final class SimpleParser extends AbstractParser {
                             // I put in the queue currentFormula
                             queue.add(currentFormula);
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                         } else if(!aux.contains("(") && pila.get(0) == F){
                             // I am in the 2 state of the automaton
@@ -110,8 +110,8 @@ public final class SimpleParser extends AbstractParser {
                             // I put in the queue currentFormula
                             queue.add(currentFormula);
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                             currentState = Q2;
                         } else{
@@ -151,8 +151,8 @@ public final class SimpleParser extends AbstractParser {
                             queue.set(index, currentFormula);
 
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                             currentState = Q3;
 
@@ -181,8 +181,8 @@ public final class SimpleParser extends AbstractParser {
                             // currentFormula la metto in coda
                             queue.add(currentFormula);
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                             currentState = Q4;
 
@@ -203,8 +203,8 @@ public final class SimpleParser extends AbstractParser {
                             // currentFormula la metto in coda
                             queue.add(currentFormula);
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                             currentState = Q1;
                         } else{
@@ -242,8 +242,8 @@ public final class SimpleParser extends AbstractParser {
                             queue.removeLast();
                             queue.removeLast();
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                             currentState = Q5;
 
@@ -251,8 +251,8 @@ public final class SimpleParser extends AbstractParser {
                         /* IMPORTANTE questo stato porta ad uno stato finale */
                             pila.removeFirst();
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                             currentState = Q6;
 
@@ -319,8 +319,8 @@ public final class SimpleParser extends AbstractParser {
 
                             queue.set(index, currentFormula);
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                             currentState = Q3;
 
@@ -342,8 +342,8 @@ public final class SimpleParser extends AbstractParser {
                             queue.removeLast();
                             queue.removeLast();
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                             currentState = Q5;
 
@@ -366,8 +366,8 @@ public final class SimpleParser extends AbstractParser {
                             queue.removeLast();
                             queue.removeLast();
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                             currentState = Q6;
 

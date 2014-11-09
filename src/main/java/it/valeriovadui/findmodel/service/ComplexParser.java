@@ -70,8 +70,8 @@ public final class ComplexParser extends AbstractParser {
                             currentState = Q6;
                         }
 
-                        if(debug)
-                            StampaPila(pila);
+                        if(DEBUG)
+                            stampaPila(pila);
 
                         break;
 
@@ -98,8 +98,8 @@ public final class ComplexParser extends AbstractParser {
                             // currentFormula la metto in coda
                             queue.add(currentFormula);
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                         }
                         else if(aux.contains("(") && pila.get(0) == F2){
@@ -119,8 +119,8 @@ public final class ComplexParser extends AbstractParser {
                             // currentFormula lametto in coda
                             queue.add(currentFormula);
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
                         }
                         else if(!aux.contains("(") && pila.get(0) == F1){
@@ -135,8 +135,8 @@ public final class ComplexParser extends AbstractParser {
 
                             queue.add(currentFormula);
 
-                            if(debug)
-                                StampaPila(pila);
+                            if(DEBUG)
+                                stampaPila(pila);
 
 
                             currentState = Q2;
@@ -179,8 +179,8 @@ public final class ComplexParser extends AbstractParser {
                                 queue.set(index, currentFormula);
 
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                             }
                         }
@@ -212,8 +212,8 @@ public final class ComplexParser extends AbstractParser {
                                 // currentFormula la metto in coda
                                 queue.add(currentFormula);
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q4;
 
@@ -241,8 +241,8 @@ public final class ComplexParser extends AbstractParser {
                                 // currentFormula la metto in coda
                                 queue.add(currentFormula);
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q1;
 
@@ -289,8 +289,8 @@ public final class ComplexParser extends AbstractParser {
                                 queue.removeLast();
                                 queue.removeLast();
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q5;
 
@@ -325,8 +325,8 @@ public final class ComplexParser extends AbstractParser {
                                 queue.removeLast();
                                 queue.removeLast();
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q5;
 
@@ -336,8 +336,8 @@ public final class ComplexParser extends AbstractParser {
                                 pila.removeFirst();
                                 pila.removeFirst();
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q6;
 
@@ -413,8 +413,8 @@ public final class ComplexParser extends AbstractParser {
 
 
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q3;
                             }
@@ -444,8 +444,8 @@ public final class ComplexParser extends AbstractParser {
                                 queue.removeLast();
                                 queue.removeLast();
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q5;
 
@@ -470,8 +470,8 @@ public final class ComplexParser extends AbstractParser {
                                 queue.removeLast();
                                 queue.removeLast();
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q5;
 
@@ -480,8 +480,8 @@ public final class ComplexParser extends AbstractParser {
                                 pila.removeFirst();
                                 pila.removeFirst();
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q5;
 
@@ -505,8 +505,8 @@ public final class ComplexParser extends AbstractParser {
 
                                 queue.removeLast();
                                 queue.removeLast();
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q5;
 
@@ -517,8 +517,8 @@ public final class ComplexParser extends AbstractParser {
                                 pila.removeFirst();
                                 pila.add(F22);
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q5;
                             }
@@ -542,8 +542,8 @@ public final class ComplexParser extends AbstractParser {
                                 queue.removeLast();
                                 queue.removeLast();
 
-                                if(debug)
-                                    StampaPila(pila);
+                                if(DEBUG)
+                                    stampaPila(pila);
 
                                 currentState = Q6;
                                 if(currentState == Q6){
